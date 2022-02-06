@@ -1,0 +1,48 @@
+<!-- <label for"name">Name: </label>
+<input id="name" type="text" [formControl]="name">
+-->
+<div class="container">
+
+    <br>
+    <form [formGroup]="TransactionForm" (ngSubmit)="onSubmitTransactionForm()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputProcessingCode">Processing Code</label>
+                <input  type="text" formControlName="inputProcessingCode" class="form-control" id="inputProcessingCode" placeholder="Processing Code">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputSystemTraceNr">System Trace Number</label>
+                <input formaControlName="inputSystemTraceNr" type="text" class="form-control" id="inputSystemTraceNr4" placeholder="System Trace Number">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputCardHolder">Card Holder</label>
+            <input formaControlName="inputCardHolder" type="text" class="form-control" id="inputCardHolder" placeholder="Card Holder">
+        </div>
+
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCardNo">Card Number</label>
+                <input formaControlName="inputCardNo" type="text" class="form-control" id="inputCardNo" placeholder="Card Number">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputFunctionCode4">Function Code</label>
+                <input formaControlName="inputFunctionCode4" type="text" class="form-control" id="inputFunctionCode4" placeholder="Function Code">
+            </div>
+        </div>
+
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputAmountTrxn">Transaction Amount</label>
+                <input formaControlName="inputAmountTrxn" type="text" class="form-control" id="inputAmountTrxn" placeholder="Transaction Amount">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputCurrencyCode">Currency Code</label>
+                <input formaControlName="inputCurrencyCode" type="text" class="form-control" id="inputCurrencyCode4" placeholder="Currency Code">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Make Transaction</button>
+    </form>
+</div>
