@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "gdV0bFHfAFn56Y2WPzqp+Q0YA1mqHaid5ZlBKx/aqEk=",
+  "Source": "AmwalPay.Web",
+  "BasePath": "_content/AmwalPay.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
