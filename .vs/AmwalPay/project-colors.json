@@ -1,5 +1,21 @@
 {
   "Version": 1,
-  "ProjectMap": {},
-  "NextColorIndex": 0
+  "ProjectMap": {
+    "6a12c618-e34d-493a-982d-123a72a1ee60": {
+      "ProjectGuid": "6a12c618-e34d-493a-982d-123a72a1ee60",
+      "DisplayName": "AmwalPay.Web",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "23213667-fb20-4cd9-8e70-b5c15c0c1935": {
+      "ProjectGuid": "23213667-fb20-4cd9-8e70-b5c15c0c1935",
+      "DisplayName": "AmwalPay.BAL",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
 }
