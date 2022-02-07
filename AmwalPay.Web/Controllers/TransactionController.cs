@@ -21,7 +21,7 @@ namespace AmwalPay.Web.Controllers
 
 
         [HttpPost("AddTransaction")]
-        public Result favourite(TransactionRequest TransactionRequest)
+        public Result AddTransaction(TransactionRequest TransactionRequest)
         {
             var result = TransactionService.AddTransaction(TransactionRequest);
             return result;
