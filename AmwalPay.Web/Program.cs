@@ -13,16 +13,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 
-
-
-//builder.Services.AddCors(options =>
-//{
-//    options.AddPolicy("CorsPolicy",
-//        builder => builder.WithOrigins(Configuration["ApplicationSettings:Client_URL"].ToString())
-//        .AllowAnyMethod()
-//        .AllowAnyHeader()
-//        .AllowCredentials());
-//});
+var devCorsPolicy = "devCorsPolicy";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(devCorsPolicy, builder => {
+        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+    });
+});
 builder.Services.AddDbContext<AmwalPayDbContext>(options =>
       options.UseSqlServer(builder.Configuration.GetConnectionString("AmwalPayConnection")));
 var app = builder.Build();
@@ -33,7 +30,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseCors("AllowMyOrigin");
+app.UseCors(devCorsPolicy);
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

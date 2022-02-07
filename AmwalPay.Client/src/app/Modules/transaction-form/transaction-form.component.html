@@ -4,31 +4,51 @@
 <div class="container">
 
     <br>
+    <h3 class="text-center">Transaction Form</h3>
+    <br>
     <form [formGroup]="TransactionForm" (ngSubmit)="onSubmitTransactionForm()">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputProcessingCode">Processing Code</label>
-                <input  type="text" formControlName="inputProcessingCode" class="form-control" id="inputProcessingCode" placeholder="Processing Code">
+                <input  type="text" formControlName="processingCode" class="form-control" id="inputProcessingCode" placeholder="Processing Code">
+                <div class="form-control-feedback" *ngIf="processingCode?.errors && (processingCode?.dirty || processingCode?.touched)">
+                    <p *ngIf="processingCode?.errors?.['pattern']" class="text-danger">Number Only</p>
+                </div>
+                <div class="form-control-feedback" *ngIf="processingCode?.errors && (processingCode?.dirty || processingCode?.touched)">
+                    <p *ngIf="processingCode?.errors?.['maxLength']" class="text-danger">max length 20</p>
+                </div>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputSystemTraceNr">System Trace Number</label>
-                <input formaControlName="inputSystemTraceNr" type="text" class="form-control" id="inputSystemTraceNr4" placeholder="System Trace Number">
+                <input formControlName="systemTraceNr" type="text" class="form-control" id="inputSystemTraceNr4" placeholder="System Trace Number">
+                <div class="form-control-feedback" *ngIf="systemTraceNr?.errors && (systemTraceNr?.dirty || systemTraceNr?.touched)">
+                    <p *ngIf="systemTraceNr?.errors?.['pattern']" class="text-danger">Number Only</p>
+                </div>
             </div>
         </div>
         <div class="form-group">
             <label for="inputCardHolder">Card Holder</label>
-            <input formaControlName="inputCardHolder" type="text" class="form-control" id="inputCardHolder" placeholder="Card Holder">
+            <input formControlName="cardHolder" type="text" class="form-control" id="inputCardHolder" placeholder="Card Holder">
+            <div class="form-control-feedback" *ngIf="cardHolder?.errors && (cardHolder?.dirty || cardHolder?.touched)">
+                <p *ngIf="cardHolder?.errors?.['maxLength']" class="text-danger">max length 20</p>
+            </div>
         </div>
 
 
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputCardNo">Card Number</label>
-                <input formaControlName="inputCardNo" type="text" class="form-control" id="inputCardNo" placeholder="Card Number">
+                <input formControlName="cardNo" type="text" class="form-control" id="inputCardNo" placeholder="Card Number">
+                <div class="form-control-feedback" *ngIf="cardNo?.errors && (cardNo?.dirty || cardNo?.touched)">
+                    <p *ngIf="cardNo?.errors?.['pattern']" class="text-danger">Number Only</p>
+                </div> 
             </div>
             <div class="form-group col-md-6">
                 <label for="inputFunctionCode4">Function Code</label>
-                <input formaControlName="inputFunctionCode4" type="text" class="form-control" id="inputFunctionCode4" placeholder="Function Code">
+                <input formControlName="functionCode" type="text" class="form-control" id="inputFunctionCode4" placeholder="Function Code">
+                <div class="form-control-feedback" *ngIf="functionCode?.errors && (functionCode?.dirty || functionCode?.touched)">
+                    <p *ngIf="functionCode?.errors?.['pattern']" class="text-danger">Number Only</p>
+                </div>
             </div>
         </div>
 
@@ -36,13 +56,24 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputAmountTrxn">Transaction Amount</label>
-                <input formaControlName="inputAmountTrxn" type="text" class="form-control" id="inputAmountTrxn" placeholder="Transaction Amount">
+                <input formControlName="amountTrxn" type="text" class="form-control" id="inputAmountTrxn" placeholder="Transaction Amount">
+                <div class="form-control-feedback" *ngIf="amountTrxn?.errors && (amountTrxn?.dirty || amountTrxn?.touched)">
+                    <p *ngIf="amountTrxn?.errors?.['pattern']" class="text-danger">Number Only</p>
+                </div>
+            
             </div>
             <div class="form-group col-md-6">
                 <label for="inputCurrencyCode">Currency Code</label>
-                <input formaControlName="inputCurrencyCode" type="text" class="form-control" id="inputCurrencyCode4" placeholder="Currency Code">
+                <input formControlName="currencyC" type="text" class="form-control" id="inputCurrencyCode4" placeholder="Currency Code">
+                <div class="form-control-feedback" *ngIf="currencyC?.errors && (currencyC?.dirty || currencyC?.touched)">
+                    <p *ngIf="currencyC?.errors?.['pattern']" class="text-danger">Number Only</p>
+                </div>
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Make Transaction</button>
     </form>
+</div>
+
+<div *ngIf="response" class="text-center">
+    {{response}}
 </div>
